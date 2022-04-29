@@ -1,0 +1,87 @@
+\documentclass{beamer}
+
+\usepackage[orientation=portrait,size=a0,scale=1.5]{beamerposter}
+\usepackage{tikz}
+\usepackage{IMTAcolors}
+
+% BEAMER
+
+% Colors
+\setbeamercolor{structure}{fg=BleuMarine}
+\setbeamercolor*{alerted text}{fg=Vert}
+
+\setbeamercolor*{palette primary}{fg=white}
+\setbeamercolor*{palette secondary}{fg=BleuLogo}
+\setbeamercolor*{palette tertiary}{fg=BleuLogo}
+
+% ITEMIZE
+\setbeamercolor*{itemize item}{fg=BleuLogo}
+\setbeamercolor*{itemize subitem}{fg=BleuLogo}
+
+\setbeamercolor*{itemize/enumerate body}{parent=normal text}
+\setbeamercolor*{itemize/enumerate subbody}{parent=normal text}
+
+\defbeamertemplate{itemize item}{bigsquare}{\hbox{\vrule width 1ex height 1ex}}
+\defbeamertemplate{itemize subitem}{smallcircle}{\tikz{\fill[inner sep=0mm] circle (2mm);}}
+\setbeamertemplate{itemize item}[bigsquare]
+\setbeamertemplate{itemize subitem}[smallcircle]
+
+% NAVIGATION SYMBOLS
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamersize{text margin left=2em,text margin right=1em,sidebar width left=17cm}
+
+% BACKGROUND IMAGE
+\pgfdeclareimage[height=\paperheight,width=\paperwidth]{background}{background}
+\setbeamertemplate{background}{
+  \pgfuseimage{background}%
+}
+
+%% headline
+\setbeamertemplate{headline}{
+  \leavevmode
+  \begin{tikzpicture}[remember picture]
+    \node at (0,1) {\vphantom{X}};
+    \node[text=white,anchor=west,font=\huge] at (24,-7) {
+      \begin{minipage}{0.66\textwidth}
+        \inserttitle
+        \end{minipage}
+    };
+    \node at (0,-14.5) {\vphantom{X}};
+  \end{tikzpicture}
+}
+
+
+\setbeamertemplate{sidebar left}{
+  \normalsize
+  \vspace{10cm}
+  \hspace{1.4cm}
+  \begin{minipage}[t]{0.21\textwidth}
+    La barre de bord.
+  \end{minipage}
+}
+
+%% footline
+\setbeamertemplate{footline}{
+  \leavevmode
+  \normalsize
+  \begin{center}
+    Une ligne en bas, pour par exemple mettre des informations de contact
+  \end{center}
+  \vspace*{1.8cm}
+}
+
+\title{Le titre du poster}
+
+\date{\today}
+
+
+\begin{document}
+
+\begin{frame}[t,fragile]
+
+Le c\oe ur du poster.
+
+\end{frame}
+
+\end{document}

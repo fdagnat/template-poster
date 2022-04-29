@@ -1,0 +1,52 @@
+\documentclass[18pt]{beamer}
+
+\usepackage[orientation=portrait,size=a0,scale=1.5]{beamerposter}
+\usepackage{tikz}
+
+\usepackage{IMTAcolors}
+\mode<presentation>
+
+% Colors
+\setbeamercolor{structure}{fg=BleuMarine}
+\setbeamercolor*{alerted text}{fg=Vert}
+
+\setbeamercolor*{palette primary}{fg=white}
+\setbeamercolor*{palette secondary}{fg=BleuLogo}
+\setbeamercolor*{palette tertiary}{fg=BleuLogo}
+\setbeamercolor*{palette quaternary}{fg=Vert}
+
+\makeatletter
+\newcommand\currentcoordinate{\the\tikz@lastxsaved,\the\tikz@lastysaved}
+\makeatother
+%% headline
+\setbeamertemplate{headline}{
+  \leavevmode
+  \begin{tikzpicture}[remember picture]
+    \node[anchor=north west] (logo) at (0,0) {
+        \includegraphics[width=0.18\textwidth]{IMT_Atlantique_logo_RVB}
+      };
+    \node at ([yshift=1cm]logo.north) {\vphantom{t}};
+    \node at ([xshift=-1cm]logo.west) {\vphantom{t}};
+    \node[text=white,anchor=west,font=\huge,minimum height=8cm,minimum width=0.67\textwidth] (titlebox) at ([xshift=8cm]logo.east) {};
+    \fill[draw,sharp corners,Vert] (titlebox.north west) -- (titlebox.north east) -- ++(0,-14) -- (\currentcoordinate -| titlebox.south west) -- ++(-14,0) -- cycle;
+    \fill[gray!50] ([xshift=-14cm,yshift=-14cm]titlebox.north west) -- ++(5,0) -- ++(0,-9.5)  -- ++(0,-88) -- ++(-5,0) -- ++(-9.5,0) -- ++(0,88) -- cycle;
+  \end{tikzpicture}
+
+}
+
+
+\mode<all>
+
+
+
+\begin{document}
+
+
+\begin{frame}
+
+~
+
+\end{frame}
+
+\end{document}
+
